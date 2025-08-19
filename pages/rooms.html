@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comfortable accommodation at The Royal Oak - Single, Double/Twin, and Family rooms with en-suite facilities, TV, and tea/coffee making facilities.">
+    <title>Our Rooms - The Royal Oak</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../index.html" class="logo">The Royal Oak</a>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="rooms.html" class="nav-link active">Our Rooms</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title">Rooms</h1>
+            <p class="page-subtitle">
+                Our newly refurbished rooms come with en-suite, TV, tea and coffee making appliances 
+                and other home comforts. All our rooms are dog-friendly too!
+            </p>
+        </div>
+    </section>
+
+    <!-- Rooms Grid -->
+    <section class="rooms-section">
+        <div class="container">
+            <div class="rooms-grid">
+                
+                <!-- Single Room -->
+                <div class="room-item">
+                    <div class="room-image">
+                        <img src="../images/rooms/room2.JPG" alt="Single Room">
+                    </div>
+                    <h3 class="room-title">Single Occupancy Room</h3>
+                    <p class="room-price"><span class="price">£55</span>/night</p>
+                    <p class="room-description">
+                        A comfortable double bed, en-suite and TV. Perfect for solo travelers 
+                        looking for a cozy, well-appointed room.
+                    </p>
+                    <a href="#" class="book-btn eviivo-booking-btn">Book This Room</a>
+                </div>
+
+                <!-- Double/Twin Room -->
+                <div class="room-item">
+                    <div class="room-image">
+                        <img src="../images/rooms/room1.JPG" alt="Double/Twin Room">
+                    </div>
+                    <h3 class="room-title">Multiple Occupancy Room</h3>
+                    <p class="room-price"><span class="price">£75</span>/night</p>
+                    <p class="room-description">
+                        A large, comfortable double or twin bed, en-suite and TV. Perfect for 
+                        couples or friends visiting the local area.
+                    </p>
+                    <a href="#" class="book-btn eviivo-booking-btn">Book This Room</a>
+                </div>
+
+                <!-- Family Room -->
+                <div class="room-item">
+                    <div class="room-image">
+                        <img src="../images/rooms/familyroom.JPEG" alt="Family Room">
+                    </div>
+                    <h3 class="room-title">Family Room</h3>
+                    <p class="room-price"><span class="price">£95</span>/night</p>
+                    <p class="room-description">
+                        A large double bed as well as 2 single beds, en-suite and TV. 
+                        Perfect for families visiting the local area.
+                    </p>
+                    <a href="#" class="book-btn eviivo-booking-btn">Book This Room</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">The Royal Oak</h3>
+                    <p class="footer-text">
+                        Your local pub for great food, comfortable rooms, and warm hospitality.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="rooms.html">Our Rooms</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contact</h4>
+                    <div class="footer-contact">
+                        <p>01913734224</p>
+                        <p>Follow us for events & updates</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Royal Oak. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Eviivo booking integration
+        document.addEventListener('DOMContentLoaded', function() {
+            const bookingButtons = document.querySelectorAll('.eviivo-booking-btn, .room-book-btn');
+            
+            bookingButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                
+                    const eviivioBookingUrl = 'https://via.eviivo.com/RoyalOakDH7';
+                    
+                    // Open booking in new tab
+                    window.open(eviivioBookingUrl, '_blank');
+                    
+                    // Track the booking attempt
+                    console.log('Booking button clicked - redirecting to Eviivo');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
