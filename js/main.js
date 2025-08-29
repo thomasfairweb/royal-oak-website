@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Smooth scrolling for anchor links
+    // Smooth scrolling for anchor links (including menu navigation)
     const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
     
     smoothScrollLinks.forEach(link => {
@@ -69,15 +69,73 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Calculate offset for sticky header
                 const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = targetElement.offsetTop - headerHeight - 20;
+                const menuNavHeight = document.querySelector('.menu-nav') ? 
+                    document.querySelector('.menu-nav').offsetHeight : 0;
+                const totalOffset = headerHeight + menuNavHeight + 20;
+                const targetPosition = targetElement.offsetTop - totalOffset;
                 
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
                 });
+
+                // Close mobile menu if it's open
+                if (navMenu && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    mobileMenuToggle.classList.remove('active');
+                    body.style.overflow = '';
+                }
             }
         });
     });
+
+    // Menu navigation active state tracking
+    const menuNavLinks = document.querySelectorAll('.menu-nav-link');
+    const menuSections = document.querySelectorAll('.menu-section');
+    
+    if (menuNavLinks.length > 0 && menuSections.length > 0) {
+        // Function to update active menu nav link
+        function updateActiveMenuLink() {
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            const menuNavHeight = document.querySelector('.menu-nav') ? 
+                document.querySelector('.menu-nav').offsetHeight : 0;
+            const scrollPosition = window.scrollY + headerHeight + menuNavHeight + 100;
+            
+            let activeSection = null;
+            
+            menuSections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                    activeSection = section;
+                }
+            });
+            
+            // Update active states
+            menuNavLinks.forEach(link => {
+                link.classList.remove('active');
+                if (activeSection) {
+                    const targetId = link.getAttribute('href').substring(1);
+                    if (activeSection.id === targetId) {
+                        link.classList.add('active');
+                    }
+                }
+            });
+        }
+        
+        // Update active link on scroll (throttled for performance)
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            if (scrollTimeout) {
+                clearTimeout(scrollTimeout);
+            }
+            scrollTimeout = setTimeout(updateActiveMenuLink, 100);
+        });
+        
+        // Initial check
+        updateActiveMenuLink();
+    }
 
     // Header background change on scroll
     const header = document.querySelector('.header');
@@ -179,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Add interactive button effects
-    const buttons = document.querySelectorAll('.btn');
+    const buttons = document.querySelectorAll('.btn, .menu-nav-link');
     
     buttons.forEach(button => {
         button.addEventListener('mousedown', function() {
@@ -210,10 +268,50 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // Observe sections for fade-in effect
-    const sections = document.querySelectorAll('.about, .food, .events, .rooms-teaser');
+    // Observe sections for fade-in effect (including menu sections)
+    const sections = document.querySelectorAll('.about, .food, .events, .rooms-teaser, .menu-section');
     sections.forEach(section => {
         observer.observe(section);
+    });
+
+    // Menu item hover effects for better UX
+    const menuItems = document.querySelectorAll('.menu-item');
+    menuItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+        });
+    });
+
+    // Keyboard navigation for menu sections
+    document.addEventListener('keydown', function(e) {
+        // Alt + number keys for quick menu navigation
+        if (e.altKey && !e.ctrlKey && !e.shiftKey) {
+            const menuSectionsMap = {
+                '1': '#starters',
+                '2': '#mains', 
+                '3': '#grill',
+                '4': '#burgers',
+                '5': '#pizza',
+                '6': '#steak',
+                '7': '#sunday'
+            };
+            
+            const sectionId = menuSectionsMap[e.key];
+            if (sectionId) {
+                e.preventDefault();
+                const section = document.querySelector(sectionId);
+                if (section) {
+                    section.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        }
     });
 
     // Console message for developers
@@ -222,8 +320,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add resize handler to close mobile menu on desktop
     window.addEventListener('resize', function() {
         if (window.innerWidth > 768) {
-            navMenu.classList.remove('active');
-            mobileMenuToggle.classList.remove('active');
+            if (navMenu) {
+                navMenu.classList.remove('active');
+            }
+            if (mobileMenuToggle) {
+                mobileMenuToggle.classList.remove('active');
+            }
             body.style.overflow = '';
         }
     });
@@ -235,7 +337,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // gtag('event', action, { event_category: category });
     }
 
-    // Track button clicks
+    // Track button clicks (including menu nav)
     buttons.forEach(button => {
         button.addEventListener('click', function() {
             const buttonText = this.textContent.trim();
@@ -250,6 +352,16 @@ document.addEventListener('DOMContentLoaded', function() {
             trackEvent(`Navigation: ${linkText}`);
         });
     });
+
+    // Track menu navigation usage
+    if (menuNavLinks.length > 0) {
+        menuNavLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                const sectionName = this.textContent.trim();
+                trackEvent(`Menu Section: ${sectionName}`, 'Menu Navigation');
+            });
+        });
+    }
 });
 
 // CSS for loading states and animations (injected via JavaScript)
@@ -284,8 +396,33 @@ const additionalStyles = `
     }
     
     /* Smooth transitions for all interactive elements */
-    .btn, .nav-link, .social-link {
+    .btn, .nav-link, .social-link, .menu-nav-link, .menu-item {
         transition: all 0.3s ease;
+    }
+    
+    /* Active state for menu navigation */
+    .menu-nav-link.active {
+        background-color: var(--primary-green);
+        color: var(--warm-white);
+        font-weight: 600;
+    }
+    
+    /* Enhanced menu item interactions */
+    .menu-item:hover {
+        box-shadow: 0 6px 20px var(--soft-shadow);
+    }
+    
+    /* Keyboard navigation hint */
+    @media (min-width: 769px) {
+        .menu-nav::after {
+            content: "💡 Tip: Use Alt + 1-7 for quick navigation";
+            display: block;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--light-text);
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
     }
 `;
 

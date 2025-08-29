@@ -382,6 +382,7 @@ p {
 .social-links {
     display: flex;
     gap: 1rem;
+    justify-content: center;
 }
 
 .social-link {
@@ -895,4 +896,267 @@ p {
 .action-item p {
     margin-bottom: 1.5rem;
     color: var(--medium-text);
+}
+
+/* =================================
+   MENU PAGE SPECIFIC STYLES
+   ================================= */
+
+/* Menu Navigation */
+.menu-nav {
+    background-color: var(--cream);
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(90, 124, 101, 0.1);
+}
+
+.menu-nav-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.menu-nav-link {
+    color: var(--medium-text);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    transition: var(--smooth-transition);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.menu-nav-link:hover {
+    background-color: var(--primary-green);
+    color: var(--warm-white);
+}
+
+/* Menu Sections */
+.menu-section {
+    padding: var(--section-padding);
+}
+
+.menu-section.alt-bg {
+    background-color: var(--cream);
+}
+
+/* Menu Grid */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Menu Items */
+.menu-item {
+    background-color: var(--warm-white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 10px var(--soft-shadow);
+    transition: var(--smooth-transition);
+}
+
+.menu-section.alt-bg .menu-item {
+    background-color: var(--warm-white);
+}
+
+.menu-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px var(--soft-shadow);
+}
+
+.menu-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.menu-item-name {
+    color: var(--primary-green);
+    font-size: 1.2rem;
+    margin: 0;
+    flex: 1;
+    margin-right: 1rem;
+}
+
+.menu-item-price {
+    color: var(--dark-text);
+    font-weight: bold;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.menu-item-description {
+    color: var(--medium-text);
+    font-style: italic;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Menu Special Callouts */
+.menu-special,
+.menu-note {
+    background-color: var(--primary-green);
+    color: var(--warm-white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.menu-special h4,
+.menu-note strong {
+    color: var(--warm-white);
+    margin-bottom: 0.5rem;
+}
+
+.menu-special p,
+.menu-note p {
+    color: var(--warm-white);
+    margin: 0;
+}
+
+/* Sunday Menu Specific */
+.sunday-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.sunday-starters,
+.sunday-mains {
+    background-color: var(--warm-white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px var(--soft-shadow);
+}
+
+.sunday-starters h3,
+.sunday-mains h3 {
+    color: var(--primary-green);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.sunday-roasts {
+    margin-bottom: 2rem;
+}
+
+.sunday-roasts h4 {
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+}
+
+.roast-options {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.roast-options li {
+    color: var(--medium-text);
+    padding: 0.3rem 0;
+}
+
+.roast-options li::before {
+    content: "•";
+    color: var(--primary-green);
+    margin-right: 0.5rem;
+}
+
+.roast-description {
+    color: var(--medium-text);
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+.sunday-portions {
+    display: grid;
+    gap: 1rem;
+}
+
+.sunday-portions .menu-item {
+    padding: 1rem;
+    margin: 0;
+}
+
+.sunday-portions .menu-item-name {
+    font-size: 1.1rem;
+}
+
+/* Booking Notes */
+.booking-note {
+    background-color: var(--accent-gold);
+    color: var(--dark-text);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.booking-note strong {
+    color: var(--dark-text);
+}
+
+/* Breakfast Menu Specific */
+.breakfast-info {
+    background-color: var(--warm-white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-top: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 10px var(--soft-shadow);
+}
+
+.breakfast-note {
+    color: var(--medium-text);
+    font-style: italic;
+    margin: 0;
+}
+
+.breakfast-sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.breakfast-section {
+    background-color: var(--warm-white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px var(--soft-shadow);
+}
+
+.breakfast-section h3 {
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.breakfast-list {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.breakfast-list li {
+    color: var(--medium-text);
+    padding: 0.3rem 0;
+    text-align: center;
+}
+
+.breakfast-list li::before {
+    content: "•";
+    color: var(--primary-green);
+    margin-right: 0.5rem;
+}
+/* Food CTA Button */
+.food-cta {
+    margin-top: 2rem;
+    text-align: center;
 }
