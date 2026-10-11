@@ -1160,3 +1160,825 @@ p {
     margin-top: 2rem;
     text-align: center;
 }
+/* =================================
+   CHRISTMAS PAGE STYLES
+   (paste at the bottom of style.css)
+   ================================= */
+
+:root {
+    --festive-red: #9b2c2c;
+    --festive-red-light: #b83a3a;
+}
+
+/* Phone link in hero */
+.xmas-phone {
+    color: var(--primary-green);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.xmas-phone:hover {
+    text-decoration: underline;
+}
+
+/* Event cards */
+.xmas-events {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.xmas-event {
+    background-color: var(--cream);
+    border-top: 4px solid var(--festive-red);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px var(--soft-shadow);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.xmas-event-date {
+    font-family: var(--font-primary);
+    color: var(--festive-red);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.xmas-event h3 {
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+}
+
+.xmas-event-meta {
+    list-style: none;
+    margin: 0.5rem 0 1.5rem;
+}
+
+.xmas-event-meta li {
+    color: var(--medium-text);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(90, 124, 101, 0.1);
+}
+
+.xmas-event-meta strong {
+    color: var(--dark-text);
+}
+
+.xmas-event .btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+/* Price badges */
+.xmas-prices {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.xmas-price {
+    background-color: var(--festive-red);
+    color: var(--warm-white);
+    border-radius: var(--border-radius);
+    padding: 0.8rem 1.8rem;
+    text-align: center;
+    box-shadow: 0 4px 15px var(--soft-shadow);
+}
+
+.xmas-price span {
+    display: block;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.xmas-price strong {
+    display: block;
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+}
+
+.xmas-price-green {
+    background-color: var(--primary-green);
+}
+
+.xmas-price-gold {
+    background-color: var(--accent-gold);
+    color: var(--dark-text);
+}
+
+/* Course cards */
+.xmas-courses {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.xmas-course {
+    background-color: var(--warm-white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px var(--soft-shadow);
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+.menu-section:not(.alt-bg) .xmas-course {
+    background-color: var(--cream);
+}
+
+.xmas-course h3 {
+    color: var(--festive-red);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.xmas-course ul {
+    list-style: none;
+}
+
+.xmas-course li {
+    color: var(--medium-text);
+    padding: 0.3rem 0;
+}
+
+.xmas-course-note {
+    color: var(--light-text);
+    font-style: italic;
+    font-size: 0.95rem;
+    margin: 1rem 0 0;
+}
+
+/* Opening times table */
+.xmas-hours {
+    max-width: 700px;
+    margin: 2rem auto 0;
+    background-color: var(--warm-white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px var(--soft-shadow);
+    padding: 1.5rem 2rem;
+    overflow-x: auto;
+}
+
+.xmas-hours table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.xmas-hours th {
+    font-family: var(--font-primary);
+    color: var(--primary-green);
+    text-align: left;
+    font-size: 1.1rem;
+    padding: 0.75rem 0.5rem;
+    border-bottom: 2px solid var(--primary-green);
+}
+
+.xmas-hours td {
+    color: var(--medium-text);
+    padding: 0.6rem 0.5rem;
+    border-bottom: 1px solid rgba(90, 124, 101, 0.1);
+}
+
+.xmas-hours td:first-child {
+    color: var(--dark-text);
+    font-weight: 600;
+}
+
+.xmas-hours .closed {
+    color: var(--festive-red);
+    font-weight: 600;
+}
+
+.xmas-hours .xmas-normal {
+    font-style: italic;
+}
+
+.booking-note a {
+    color: var(--dark-text);
+    font-weight: 600;
+}
+
+/* Home page Christmas banner */
+.xmas-banner {
+    background-color: var(--festive-red);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.xmas-banner-title {
+    color: var(--warm-white);
+    margin-bottom: 1rem;
+}
+
+.xmas-banner-text {
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.btn-festive {
+    background-color: var(--warm-white);
+    color: var(--festive-red);
+    border-color: var(--warm-white);
+}
+
+.btn-festive:hover {
+    background-color: transparent;
+    color: var(--warm-white);
+    border-color: var(--warm-white);
+}
+/* =================================
+   CHRISTMAS PAGE STYLES
+   (paste at the bottom of style.css)
+   ================================= */
+
+:root {
+    --festive-red: #9b2c2c;
+    --festive-red-light: #b83a3a;
+}
+
+/* Phone link in hero */
+.xmas-phone {
+    color: var(--primary-green);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.xmas-phone:hover {
+    text-decoration: underline;
+}
+
+/* Event cards */
+.xmas-events {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.xmas-event {
+    background-color: var(--cream);
+    border-top: 4px solid var(--festive-red);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px var(--soft-shadow);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.xmas-event-date {
+    font-family: var(--font-primary);
+    color: var(--festive-red);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.xmas-event h3 {
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+}
+
+.xmas-event-meta {
+    list-style: none;
+    margin: 0.5rem 0 1.5rem;
+}
+
+.xmas-event-meta li {
+    color: var(--medium-text);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(90, 124, 101, 0.1);
+}
+
+.xmas-event-meta strong {
+    color: var(--dark-text);
+}
+
+.xmas-event .btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+/* Price badges */
+.xmas-prices {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.xmas-price {
+    background-color: var(--festive-red);
+    color: var(--warm-white);
+    border-radius: var(--border-radius);
+    padding: 0.8rem 1.8rem;
+    text-align: center;
+    box-shadow: 0 4px 15px var(--soft-shadow);
+}
+
+.xmas-price span {
+    display: block;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.xmas-price strong {
+    display: block;
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+}
+
+.xmas-price-green {
+    background-color: var(--primary-green);
+}
+
+.xmas-price-gold {
+    background-color: var(--accent-gold);
+    color: var(--dark-text);
+}
+
+/* Course cards */
+.xmas-courses {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.xmas-course {
+    background-color: var(--warm-white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px var(--soft-shadow);
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+.menu-section:not(.alt-bg) .xmas-course {
+    background-color: var(--cream);
+}
+
+.xmas-course h3 {
+    color: var(--festive-red);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.xmas-course ul {
+    list-style: none;
+}
+
+.xmas-course li {
+    color: var(--medium-text);
+    padding: 0.3rem 0;
+}
+
+.xmas-course-note {
+    color: var(--light-text);
+    font-style: italic;
+    font-size: 0.95rem;
+    margin: 1rem 0 0;
+}
+
+/* Opening times table */
+.xmas-hours {
+    max-width: 700px;
+    margin: 2rem auto 0;
+    background-color: var(--warm-white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px var(--soft-shadow);
+    padding: 1.5rem 2rem;
+    overflow-x: auto;
+}
+
+.xmas-hours table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.xmas-hours th {
+    font-family: var(--font-primary);
+    color: var(--primary-green);
+    text-align: left;
+    font-size: 1.1rem;
+    padding: 0.75rem 0.5rem;
+    border-bottom: 2px solid var(--primary-green);
+}
+
+.xmas-hours td {
+    color: var(--medium-text);
+    padding: 0.6rem 0.5rem;
+    border-bottom: 1px solid rgba(90, 124, 101, 0.1);
+}
+
+.xmas-hours td:first-child {
+    color: var(--dark-text);
+    font-weight: 600;
+}
+
+.xmas-hours .closed {
+    color: var(--festive-red);
+    font-weight: 600;
+}
+
+.xmas-hours .xmas-normal {
+    font-style: italic;
+}
+
+.booking-note a {
+    color: var(--dark-text);
+    font-weight: 600;
+}
+
+/* Home page Christmas banner */
+.xmas-banner {
+    background-color: var(--festive-red);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.xmas-banner-title {
+    color: var(--warm-white);
+    margin-bottom: 1rem;
+}
+
+.xmas-banner-text {
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.btn-festive {
+    background-color: var(--warm-white);
+    color: var(--festive-red);
+    border-color: var(--warm-white);
+}
+
+.btn-festive:hover {
+    background-color: transparent;
+    color: var(--warm-white);
+    border-color: var(--warm-white);
+}
+
+/* Poster gallery */
+.xmas-posters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.xmas-poster {
+    display: block;
+    text-decoration: none;
+    background-color: var(--cream);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px var(--soft-shadow);
+    overflow: hidden;
+    transition: var(--smooth-transition);
+}
+
+.xmas-poster:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px var(--soft-shadow);
+}
+
+.xmas-poster img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 5 / 7;
+    object-fit: cover;
+    object-position: top;
+}
+
+.xmas-poster span {
+    display: block;
+    padding: 0.8rem;
+    text-align: center;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    color: var(--primary-green);
+}
+/* =================================
+   CHRISTMAS PAGE STYLES
+   (paste at the bottom of style.css)
+   ================================= */
+
+:root {
+    --festive-red: #9b2c2c;
+    --festive-red-light: #b83a3a;
+}
+
+/* Phone link in hero */
+.xmas-phone {
+    color: var(--primary-green);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.xmas-phone:hover {
+    text-decoration: underline;
+}
+
+/* Event cards - poster on the left, details on the right */
+.xmas-events {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.xmas-event {
+    background-color: var(--cream);
+    border-top: 4px solid var(--festive-red);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px var(--soft-shadow);
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.xmas-event-poster {
+    display: block;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 15px var(--soft-shadow);
+    transition: var(--smooth-transition);
+}
+
+.xmas-event-poster:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px var(--soft-shadow);
+}
+
+.xmas-event-poster img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.xmas-event-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.xmas-event-date {
+    font-family: var(--font-primary);
+    color: var(--festive-red);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.xmas-event h3 {
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+}
+
+.xmas-event-meta {
+    list-style: none;
+    margin: 0.5rem 0 1.5rem;
+}
+
+.xmas-event-meta li {
+    color: var(--medium-text);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(90, 124, 101, 0.1);
+}
+
+.xmas-event-meta strong {
+    color: var(--dark-text);
+}
+
+.xmas-event .btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+/* Menu sections - poster beside the content */
+.xmas-with-poster {
+    display: grid;
+    grid-template-columns: minmax(220px, 300px) 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.xmas-side-poster {
+    display: block;
+    position: sticky;
+    top: 100px;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background-color: var(--warm-white);
+    box-shadow: 0 4px 15px var(--soft-shadow);
+    transition: var(--smooth-transition);
+}
+
+.xmas-side-poster:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px var(--soft-shadow);
+}
+
+.xmas-side-poster img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.xmas-side-poster span {
+    display: block;
+    padding: 0.7rem;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary-green);
+}
+
+.menu-section:not(.alt-bg) .xmas-side-poster {
+    background-color: var(--cream);
+}
+
+.xmas-side-content .xmas-prices {
+    justify-content: flex-start;
+}
+
+.xmas-side-content .booking-note {
+    margin-top: 2rem;
+}
+
+/* Price badges */
+.xmas-prices {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.xmas-price {
+    background-color: var(--festive-red);
+    color: var(--warm-white);
+    border-radius: var(--border-radius);
+    padding: 0.8rem 1.8rem;
+    text-align: center;
+    box-shadow: 0 4px 15px var(--soft-shadow);
+}
+
+.xmas-price span {
+    display: block;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.xmas-price strong {
+    display: block;
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+}
+
+.xmas-price-green {
+    background-color: var(--primary-green);
+}
+
+.xmas-price-gold {
+    background-color: var(--accent-gold);
+    color: var(--dark-text);
+}
+
+/* Course cards */
+.xmas-courses {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.xmas-courses-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.xmas-course {
+    background-color: var(--warm-white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px var(--soft-shadow);
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+.menu-section:not(.alt-bg) .xmas-course {
+    background-color: var(--cream);
+}
+
+.xmas-course h3 {
+    color: var(--festive-red);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.xmas-course ul {
+    list-style: none;
+}
+
+.xmas-course li {
+    color: var(--medium-text);
+    padding: 0.3rem 0;
+}
+
+.xmas-course-note {
+    color: var(--light-text);
+    font-style: italic;
+    font-size: 0.95rem;
+    margin: 1rem 0 0;
+}
+
+/* Opening times table */
+.xmas-hours {
+    background-color: var(--warm-white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px var(--soft-shadow);
+    padding: 1.5rem 2rem;
+    overflow-x: auto;
+}
+
+.xmas-hours table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.xmas-hours th {
+    font-family: var(--font-primary);
+    color: var(--primary-green);
+    text-align: left;
+    font-size: 1.1rem;
+    padding: 0.75rem 0.5rem;
+    border-bottom: 2px solid var(--primary-green);
+}
+
+.xmas-hours td {
+    color: var(--medium-text);
+    padding: 0.6rem 0.5rem;
+    border-bottom: 1px solid rgba(90, 124, 101, 0.1);
+}
+
+.xmas-hours td:first-child {
+    color: var(--dark-text);
+    font-weight: 600;
+}
+
+.xmas-hours .closed {
+    color: var(--festive-red);
+    font-weight: 600;
+}
+
+.xmas-hours .xmas-normal {
+    font-style: italic;
+}
+
+.booking-note a {
+    color: var(--dark-text);
+    font-weight: 600;
+}
+
+/* Home page Christmas banner */
+.xmas-banner {
+    background-color: var(--festive-red);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.xmas-banner-title {
+    color: var(--warm-white);
+    margin-bottom: 1rem;
+}
+
+.xmas-banner-text {
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.btn-festive {
+    background-color: var(--warm-white);
+    color: var(--festive-red);
+    border-color: var(--warm-white);
+}
+
+.btn-festive:hover {
+    background-color: transparent;
+    color: var(--warm-white);
+    border-color: var(--warm-white);
+}

@@ -553,3 +553,332 @@
         color: black;
     }
 }
+/* =================================
+   CHRISTMAS PAGE - RESPONSIVE
+   (paste at the bottom of responsive.css)
+   ================================= */
+
+@media screen and (max-width: 768px) {
+    .xmas-events,
+    .xmas-courses {
+        grid-template-columns: 1fr;
+    }
+
+    .xmas-event {
+        text-align: center;
+    }
+
+    .xmas-event .btn {
+        align-self: center;
+    }
+
+    .xmas-banner-title {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .xmas-event,
+    .xmas-course {
+        padding: 1.5rem 1rem;
+    }
+
+    .xmas-event .btn {
+        align-self: stretch;
+    }
+
+    .xmas-price {
+        width: 100%;
+    }
+
+    .xmas-hours {
+        padding: 1rem;
+    }
+
+    .xmas-hours th,
+    .xmas-hours td {
+        font-size: 0.95rem;
+        padding: 0.5rem 0.3rem;
+    }
+
+    .xmas-banner {
+        padding: 2rem 0;
+    }
+
+    .xmas-banner-title {
+        font-size: 1.7rem;
+    }
+}
+
+@media print {
+    .xmas-banner,
+    .xmas-event .btn {
+        display: none;
+    }
+}
+/* =================================
+   CHRISTMAS PAGE - RESPONSIVE
+   (paste at the bottom of responsive.css)
+   ================================= */
+
+@media screen and (max-width: 768px) {
+    .xmas-events,
+    .xmas-courses {
+        grid-template-columns: 1fr;
+    }
+
+    .xmas-event {
+        text-align: center;
+    }
+
+    .xmas-event .btn {
+        align-self: center;
+    }
+
+    .xmas-banner-title {
+        font-size: 2rem;
+    }
+
+    .xmas-posters {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .xmas-event,
+    .xmas-course {
+        padding: 1.5rem 1rem;
+    }
+
+    .xmas-event .btn {
+        align-self: stretch;
+    }
+
+    .xmas-price {
+        width: 100%;
+    }
+
+    .xmas-hours {
+        padding: 1rem;
+    }
+
+    .xmas-hours th,
+    .xmas-hours td {
+        font-size: 0.95rem;
+        padding: 0.5rem 0.3rem;
+    }
+
+    .xmas-banner {
+        padding: 2rem 0;
+    }
+
+    .xmas-banner-title {
+        font-size: 1.7rem;
+    }
+}
+
+@media print {
+    .xmas-banner,
+    .xmas-event .btn {
+        display: none;
+    }
+}
+/* =================================
+   CHRISTMAS PAGE - RESPONSIVE
+   (paste at the bottom of responsive.css)
+   ================================= */
+
+@media screen and (max-width: 1024px) {
+    .xmas-with-poster {
+        grid-template-columns: 220px 1fr;
+        gap: 2rem;
+    }
+
+    .xmas-courses-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .xmas-events,
+    .xmas-courses,
+    .xmas-courses-2 {
+        grid-template-columns: 1fr;
+    }
+
+    /* Event cards stack: poster on top, details below */
+    .xmas-event {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .xmas-event-poster {
+        max-width: 260px;
+        margin: 0 auto;
+    }
+
+    .xmas-event .btn {
+        align-self: center;
+    }
+
+    /* Menu sections stack: poster on top, content below */
+    .xmas-with-poster {
+        grid-template-columns: 1fr;
+    }
+
+    .xmas-side-poster {
+        position: static;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .xmas-side-content .xmas-prices {
+        justify-content: center;
+    }
+
+    .xmas-banner-title {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .xmas-event,
+    .xmas-course {
+        padding: 1.5rem 1rem;
+    }
+
+    .xmas-event .btn {
+        align-self: stretch;
+    }
+
+    .xmas-price {
+        width: 100%;
+    }
+
+    .xmas-hours {
+        padding: 1rem;
+    }
+
+    .xmas-hours th,
+    .xmas-hours td {
+        font-size: 0.95rem;
+        padding: 0.5rem 0.3rem;
+    }
+
+    .xmas-banner {
+        padding: 2rem 0;
+    }
+
+    .xmas-banner-title {
+        font-size: 1.7rem;
+    }
+}
+
+@media print {
+    .xmas-banner,
+    .xmas-event .btn,
+    .xmas-event-poster,
+    .xmas-side-poster {
+        display: none;
+    }
+}
+/* =================================
+   CHRISTMAS PAGE - RESPONSIVE
+   (paste at the bottom of responsive.css)
+   ================================= */
+
+@media screen and (max-width: 1024px) {
+    .xmas-with-poster {
+        grid-template-columns: 220px 1fr;
+        gap: 2rem;
+    }
+
+    .xmas-courses-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .xmas-events,
+    .xmas-courses,
+    .xmas-courses-2 {
+        grid-template-columns: 1fr;
+    }
+
+    /* Event cards stack: poster on top, details below */
+    .xmas-event {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .xmas-event-poster {
+        max-width: 260px;
+        margin: 0 auto;
+    }
+
+    .xmas-event .btn {
+        align-self: center;
+    }
+
+    /* Menu sections stack: poster on top, content below */
+    .xmas-with-poster {
+        grid-template-columns: 1fr;
+    }
+
+    .xmas-side-poster {
+        position: static;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .xmas-side-content .xmas-prices {
+        justify-content: center;
+    }
+
+    .xmas-banner-title {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .xmas-event,
+    .xmas-course {
+        padding: 1.5rem 1rem;
+    }
+
+    .xmas-event .btn {
+        align-self: stretch;
+    }
+
+    .xmas-price {
+        width: 100%;
+    }
+
+    .xmas-hours {
+        padding: 1rem;
+    }
+
+    .xmas-hours th,
+    .xmas-hours td {
+        font-size: 0.95rem;
+        padding: 0.5rem 0.3rem;
+    }
+
+    .xmas-banner {
+        padding: 2rem 0;
+    }
+
+    .xmas-banner-title {
+        font-size: 1.7rem;
+    }
+}
+
+@media print {
+    .xmas-banner,
+    .xmas-event .btn,
+    .xmas-event-poster,
+    .xmas-side-poster {
+        display: none;
+    }
+}
